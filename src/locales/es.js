@@ -1,5 +1,6 @@
 export default {
     workout: 'Comenzar',
     exercise: 'Ejercicio',
-    settings: 'Configuraciones'
+    settings: 'Configuraciones',
+    details: 'Detalles'
 }
