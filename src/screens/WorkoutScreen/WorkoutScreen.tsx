@@ -1,9 +1,9 @@
 import { Button, Text, View } from "react-native";
 
-const HomeScreen = ({ navigation }) => {
+const WorkoutScreen = ({ navigation }) => {
     return (
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-            <Text>Home screen</Text>
+            <Text>Workout Screen</Text>
             <Button
                 title="Go to Details"
                 onPress={() => navigation.navigate('Details')}
@@ -12,4 +12,4 @@ const HomeScreen = ({ navigation }) => {
     );
 }
 
-export default HomeScreen;
+export default WorkoutScreen;

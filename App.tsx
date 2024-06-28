@@ -2,19 +2,20 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import React from 'react';
-import HomeScreen from './src/screens/HomeScreen';
+import WorkoutScreen from './src/screens/WorkoutScreen';
 import DetailsScreen from './src/screens/DetailsScreen';
 import SettingsScreen from './src/screens/SettingsScreen';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import ExerciseScreen from './src/screens/ExerciseScreen';
+import I18n from './src/util/i18n';
 
-const HomeStack = createNativeStackNavigator();
-function HomeStackScreen() {
+const WorkoutStack = createNativeStackNavigator();
+function WorkoutStackScreen() {
   return (
-    <HomeStack.Navigator>
-      <HomeStack.Screen name="Home" component={HomeScreen} />
-      <HomeStack.Screen name="Details" component={DetailsScreen} />
-    </HomeStack.Navigator>
+    <WorkoutStack.Navigator>
+      <WorkoutStack.Screen name="Workout" component={WorkoutScreen} options={{title: I18n.t('workout')}}/>
+      <WorkoutStack.Screen name="Details" component={DetailsScreen} options={{title: I18n.t('details')}}/>
+    </WorkoutStack.Navigator>
   );
 }
 
@@ -22,8 +23,8 @@ const ExerciseStack = createNativeStackNavigator();
 function ExerciseStackScreen() {
   return (
     <ExerciseStack.Navigator>
-      <ExerciseStack.Screen name="Exercise" component={ExerciseScreen} />
-      <ExerciseStack.Screen name="Details" component={DetailsScreen} />
+      <ExerciseStack.Screen name="Exercise" component={ExerciseScreen} options={{title: I18n.t('exercise')}}/>
+      <ExerciseStack.Screen name="Details" component={DetailsScreen} options={{title: I18n.t('details')}}/>
     </ExerciseStack.Navigator>
   );
 }
@@ -32,8 +33,8 @@ const SettingsStack = createNativeStackNavigator();
 function SettingsStackScreen() {
   return (
     <SettingsStack.Navigator>
-      <SettingsStack.Screen name="Settings" component={SettingsScreen} />
-      <SettingsStack.Screen name="Details" component={DetailsScreen} />
+      <SettingsStack.Screen name="Settings" component={SettingsScreen} options={{title: I18n.t('settings')}}/>
+      <SettingsStack.Screen name="Details" component={DetailsScreen} options={{title: I18n.t('details')}}/>
     </SettingsStack.Navigator>
   );
 }
@@ -47,9 +48,9 @@ function App() {
   return (
     <NavigationContainer>
       <Tab.Navigator screenOptions={{ headerShown: false }}>
-        <Tab.Screen name="WorkoutStack" component={HomeStackScreen} options={{ title: 'Treino', tabBarIcon: ({ color }) => renderTabIcon('chalkboard-teacher', color) }} />
-        <Tab.Screen name="ExerciseStack" component={ExerciseStackScreen} options={{ title: 'Exercícios', tabBarIcon: ({ color }) => renderTabIcon('dumbbell', color) }} />
-        <Tab.Screen name="SettingsStack" component={SettingsStackScreen} options={{ title: 'Configurações', tabBarIcon: ({ color }) => renderTabIcon('user-cog', color) }} />
+        <Tab.Screen name="WorkoutStack" component={WorkoutStackScreen} options={{ title: I18n.t('workout'), tabBarIcon: ({ color }) => renderTabIcon('chalkboard-teacher', color) }} />
+        <Tab.Screen name="ExerciseStack" component={ExerciseStackScreen} options={{ title: I18n.t('exercise'), tabBarIcon: ({ color }) => renderTabIcon('dumbbell', color) }} />
+        <Tab.Screen name="SettingsStack" component={SettingsStackScreen} options={{ title: I18n.t('settings'), tabBarIcon: ({ color }) => renderTabIcon('user-cog', color) }} />
       </Tab.Navigator>
     </NavigationContainer>
   );
