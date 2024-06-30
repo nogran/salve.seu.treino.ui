@@ -1,7 +1,7 @@
 export default {
     workout: 'Comenzar',
     exercise: 'Ejercicio',
-    settings: 'Configuraciones',
+    help: 'Ayuda',
     details: 'Detalles',
     premium: 'Premium',
 }
