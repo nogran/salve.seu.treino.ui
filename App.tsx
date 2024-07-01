@@ -10,13 +10,14 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 import ExerciseScreen from './src/screens/ExerciseScreen';
 import I18n from './src/util/i18n';
 import GlobalStyles from './src/styles/GlobalStyles';
+import MuscleGroupsScreen from './src/screens/MuscleGroupsScreen';
 
 const WorkoutStack = createNativeStackNavigator();
 function WorkoutStackScreen() {
   return (
     <WorkoutStack.Navigator>
       <WorkoutStack.Screen name="Workout" component={WorkoutScreen} options={{title: I18n.t('workout')}}/>
-      <WorkoutStack.Screen name="Details" component={DetailsScreen} options={{title: I18n.t('details')}}/>
+      <WorkoutStack.Screen name="MuscleGroups" component={MuscleGroupsScreen} options={{title: I18n.t('muscle_groups')}}/>
     </WorkoutStack.Navigator>
   );
 }
@@ -38,6 +39,15 @@ function HelpStackScreen() {
       <HelpStack.Screen name="Help" component={HelpScreen} options={{title: I18n.t('help')}}/>
       <HelpStack.Screen name="Details" component={DetailsScreen} options={{title: I18n.t('details')}}/>
     </HelpStack.Navigator>
+  );
+}
+
+const MuscleGroupsStack = createNativeStackNavigator();
+function MuscleGroupsStackScreen() {
+  return (
+    <MuscleGroupsStack.Navigator>
+      <MuscleGroupsStack.Screen name="MuscleGroups" component={MuscleGroupsScreen} options={{title: I18n.t('muscle_groups')}}/>
+    </MuscleGroupsStack.Navigator>
   );
 }
 

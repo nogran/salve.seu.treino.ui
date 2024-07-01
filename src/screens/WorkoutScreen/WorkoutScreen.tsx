@@ -6,8 +6,8 @@ const WorkoutScreen = ({ navigation }) => {
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
             <Text>{I18n.t('workout')}</Text>
             <Button
-                title="Go to Details"
-                onPress={() => navigation.navigate('Details')}
+                title="Go to Muscle Groups"
+                onPress={() => navigation.navigate('MuscleGroups')}
             />
         </View>
     );
